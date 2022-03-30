@@ -32,7 +32,7 @@ two.mu_unequal <- function(data1,data2){
     sigma_z <- var(Z)
     TT <- n1*t(mu_z)%*%solve(sigma_z)%*%mu_z
   }
-  
+  # Hotelling in T2nWilks.R
   Hotelling_dis <- Hotelling$new(n=n1-1,p=p)
   pvalue <- 1-Hotelling_dis$cdf(TT)
   return(list(Hotelling_stat = TT,pvalue = pvalue))
